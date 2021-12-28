@@ -38,18 +38,4 @@ class pypykatz(interfaces.plugins.PluginInterface):
         ]
 
     def run(self):
-        return renderers.TreeGrid(
-            [
-                ("Credential Type", str),
-                ("Domain Name", str),
-                ("Username", str),
-                ("NThash", str),
-                ("LMHash", str),
-                ("SHAHash", str),
-                ("masterkey", str),
-                ("masterkey (sha1)", str),
-                ("key_guid", str),
-                ("password", str),
-            ],
-            pparser.go_volatility3(self),
-        )
+        return pparser.go_volatility3(self)
